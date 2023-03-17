@@ -9,11 +9,12 @@ public class Main {
     File file = new File(args[0]);
     Scanner input = new Scanner(System.in);
 
+    AddressBook.LoadSavedContacts(file);
     while (true) {
       System.out.println("1-Vypsat uložené kontakty, 2-Přidat kontakt, 3-Odebrat kontakt, 4-Ukončit program");
       System.out.print("Zadej akci, kterou chceš provést: ");
-      int akce = input.nextInt();
-      switch (akce) {
+
+      switch (input.nextInt()) {
         case 1 -> AddressBook.PrintSavedContacts(file);
         case 2 -> AddressBook.AddContact(file);
         case 3 -> AddressBook.RemoveContact(file);
