@@ -15,6 +15,15 @@ public class Contact {
     this.PhoneNumber = phoneNumber;
   }
 
+  public Contact(String line) {
+    String[] contact = line.split("-");
+    this.ID = contact[0];
+    this.FirstName = contact[1];
+    this.LastName = contact[2];
+    this.Email = contact[3];
+    this.PhoneNumber = contact[4];
+  }
+
   public String toString() {
     return this.ID + "-" + this.FirstName + "-" + this.LastName + "-" + this.Email + "-" + this.PhoneNumber;
   }
