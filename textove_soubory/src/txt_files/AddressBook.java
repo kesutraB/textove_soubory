@@ -59,4 +59,11 @@ public class AddressBook {
     }
     else System.out.println("Žádné kontakty k výpisu.\n");
   }
+
+  public static void LoadSavedContacts(File f) throws FileNotFoundException {
+    Scanner fileReader = new Scanner(f);
+    while (fileReader.hasNextLine()) {
+      contacts.add(new Contact(fileReader.nextLine()));
+    }
+  }
 }
